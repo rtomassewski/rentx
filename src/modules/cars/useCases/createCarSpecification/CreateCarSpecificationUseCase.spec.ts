@@ -1,4 +1,3 @@
-import { SpecificationRepository } from "@modules/cars/infra/typeorm/repositories/SpecificationRepository";
 import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
 import { SpecificationRepositoryInMemory } from "@modules/cars/repositories/in-memory/SpecificationRepositoryInMemory";
 import { AppError } from "@shared/errors/AppError";
@@ -39,7 +38,11 @@ describe("Create Car Specification", () => {
       category_id: "category",
     });
 
-    const specifications_id = ["54321"];
+    const specification = await specificationsRepositoryInMemory.create({
+      description: "test",
+      name: "test",
+    });
+    const specifications_id = [specification.id];
     await createCarSpecificationUseCase.execute({
       car_id: car.id,
       specifications_id,
