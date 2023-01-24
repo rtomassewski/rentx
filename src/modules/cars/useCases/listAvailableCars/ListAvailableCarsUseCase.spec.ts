@@ -44,7 +44,6 @@ describe("List Cars", () => {
       brand: "Car_brand_test",
     });
 
-    console.log(cars);
     expect(cars).toEqual([car]);
   });
   it("should be able to list all available cars by name", async () => {
