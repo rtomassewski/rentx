@@ -3,7 +3,7 @@ import { Specification } from "@modules/cars/infra/typeorm/entities/Specificatio
 import {
   ICreateSpecificationDTO,
   ISpecificationRepository,
-} from "../ISpecificationRepository";
+} from "../ISpecificationsRepository";
 
 class SpecificationRepositoryInMemory implements ISpecificationRepository {
   specifications: Specification[] = [];
